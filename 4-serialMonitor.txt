@@ -1,0 +1,11 @@
+// Experiment 4: Print"Hello, World!"toSerial Monitor
+void setup(){
+// Initializetheserial communicationat abaudrate of9600
+Serial.begin(9600);
+}\
+void loop(){
+// Send"Hello,World!" to theSerial Monitor
+Serial.println("Hello, World!");
+// Delayfor 1second (1000milliseconds)
+delay(1000);
+}

@@ -1,0 +1,19 @@
+// Experiment 3: Blinking LED
+// Definethepin wherethe LEDisconnected
+const int ledPin =13;
+// Setup functionruns oncewhenyoupower uporreset theArduino
+void setup(){
+// Initializethedigital pinas anoutput
+pinMode(ledPin, OUTPUT);
+}
+// Loop functionruns repeatedlyafter setup
+void loop(){
+// Turn theLEDon(HIGH)
+digitalWrite(ledPin, HIGH);
+// Delayfor 1second (1000milliseconds)
+delay(1000);
+// Turn theLEDoff (LOW)
+digitalWrite(ledPin, LOW);
+// Delayfor 1second
+delay(1000);
+}
