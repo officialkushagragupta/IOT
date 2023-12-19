@@ -19,3 +19,58 @@ Serial.print(distance);
 Serial.println(" cm");
 delay(500); // Delayfor better readability
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//works for tinkercad
+// Define the pins for the sensor
+const int trigPin = 9;  // Trigger pin
+const int echoPin = 10; // Echo pin
+
+// Variables to store the duration and distance
+long duration;
+int distance;
+
+void setup() {
+  // Set the trigPin as an OUTPUT
+  pinMode(trigPin, OUTPUT);
+  // Set the echoPin as an INPUT
+  pinMode(echoPin, INPUT);
+  
+  // Start Serial communication
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Trigger the sensor by sending a 10 microsecond pulse
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  // Read the duration of the pulse on the echoPin
+  duration = pulseIn(echoPin, HIGH);
+  
+  // Calculate the distance using the speed of sound (340 m/s)
+  distance = duration * 0.034 / 2;
+  
+  // Print the distance to the Serial Monitor
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+  
+  // Wait for a moment before taking the next measurement
+  delay(1000);
+}
